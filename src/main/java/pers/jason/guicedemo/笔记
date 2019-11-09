@@ -1,0 +1,15 @@
+Module：
+
+Module中存放了很多表达式，Module不被运行，在Guice.createInjector()的时候记录所有表达式；
+
+在Guice中没有初始化的概念，在injector.getInstance()的时候根据表达式调用构造函数
+
+
+
+作用域：
+1. 默认：
+    一般实例，应用于：stateless，构造速度快
+2. singleton
+    应用于：stateful实例，构造速度慢的实例，必须线程安全，如数据库和网络连接
+3. session/request
+    应用于：stateful实例，含有session、request信息的实例
